@@ -46,5 +46,6 @@ typedef struct instruction_s
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void free_dlistint(stack_t *head);
 
 #endif /* MONTY_H */

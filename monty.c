@@ -59,11 +59,12 @@ int main(int argc, char *argv[])
                 return (EXIT_FAILURE);
             }
 
-            free(tokens);
+            free_ressources(tokens);
         }
     }
 
     fclose(file);
     /*free(line);*/
+    free_dlistint(stack);
     return (EXIT_SUCCESS);
 }
