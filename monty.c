@@ -13,11 +13,10 @@ void pall(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[])
 {
     FILE *file;
-    char *line = NULL, **tokens;
-    size_t len = 0;
-    ssize_t read;
+    char **tokens;
     unsigned int line_number = 0;
     stack_t *stack = NULL;
+    char line[500];
 
     if (argc != 2)
     {
@@ -31,8 +30,7 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         return (EXIT_FAILURE);
     }
-
-    while ((read = getline(&line, &len, file)) != -1)
+    while (fgets(line, sizeof(line), file) != NULL)
     {
         line_number++;
         tokens = tokenize(line, " $\n");
@@ -66,6 +64,6 @@ int main(int argc, char *argv[])
     }
 
     fclose(file);
-    free(line);
+    /*free(line);*/
     return (EXIT_SUCCESS);
 }

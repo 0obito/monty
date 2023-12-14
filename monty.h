@@ -14,6 +14,7 @@
 void free_line(char *line);
 char **tokenize(char *line, char *delimiter);
 void free_ressources(char **cmd);
+char *_strdup(char *str);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
