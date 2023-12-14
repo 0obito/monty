@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * tokenize - a function that tokenize a line
@@ -17,7 +17,7 @@ char **tokenize(char *line, char *delimiter)
 
 	if (line == NULL)
 		return (NULL);
-	dup = _strdup(line);
+	dup = strdup(line);
 
 	str1 = strtok(dup, delimiter);
 	if (str1 == NULL)
@@ -44,7 +44,7 @@ char **tokenize(char *line, char *delimiter)
 	}
 	while (str2 != NULL)
 	{
-		token[j] = _strdup(str2);
+		token[j] = strdup(str2);
 		str2 = strtok(NULL, delimiter);
 		j++;
 	}

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * free_ressources - frees the allocated memory
