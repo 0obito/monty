@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void push(stack_t **stack, unsigned int line_number, int value);
+void push(stack_t **stack, unsigned int line_number/*, int value*/);
 void pall(stack_t **stack, unsigned int line_number);
 
 /**
@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
     unsigned int line_number = 0;
     stack_t *stack = NULL;
     char line[500];
+    /*int data = 0;*/
 
     if (argc != 2)
     {
@@ -37,17 +38,17 @@ int main(int argc, char *argv[])
 
         if (tokens != NULL && tokens[0] != NULL)
         {
-            int data = 0;
             if (strcmp(tokens[0], "push") == 0)
             {
                 if (tokens[1] != NULL)
-                    data = atoi(tokens[1]);
+                    printf("spopo");
+                /*data = atoi(tokens[1]);*/
                 else
                 {
                     fprintf(stderr, "L%d: usage: push integer\n", line_number);
                     return (EXIT_FAILURE);
                 }
-                push(&stack, line_number, data);
+                push(&stack, line_number/*, data*/);
             }
             else if (strcmp(tokens[0], "pall") == 0)
             {
