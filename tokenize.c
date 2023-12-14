@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <string.h>
 
 /**
  * tokenize - a function that tokenize a line

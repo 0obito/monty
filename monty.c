@@ -13,7 +13,7 @@ void pall(stack_t **stack, unsigned int line_number);
 int main(int argc, char *argv[])
 {
     FILE *file;
-    char *line = NULL;
+    char *line = NULL, **tokens;
     size_t len = 0;
     ssize_t read;
     unsigned int line_number = 0;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     while ((read = getline(&line, &len, file)) != -1)
     {
         line_number++;
-        char **tokens = tokenize(line, " $\n");
+        tokens = tokenize(line, " $\n");
 
         if (tokens != NULL && tokens[0] != NULL)
         {

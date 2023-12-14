@@ -4,6 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+
+void free_line(char *line);
+char **tokenize(char *line, char *delimiter);
+void free_ressources(char **cmd);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,7 +45,5 @@ typedef struct instruction_s
     void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void free_line(char *line);
-char **tokenize(char *line, char *delimiter);
 
 #endif /* MONTY_H */
